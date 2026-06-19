@@ -215,63 +215,65 @@ function EditorModal({ template, onClose }) {
         </div>
         
         <div className="editor-canvas-container">
-          <div 
-            className="canvas-element" 
-            ref={canvasRef}
-            style={{
-              ...template.canvasStyles,
-              backgroundImage: customBg ? `url(${customBg})` : template.canvasStyles.backgroundImage
-            }}
-          >
-            {/* The Overlay Box */}
-            <div style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              width: '80%',
-              padding: '40px',
-              backgroundColor: data.overlayEnabled ? hexToRgba(data.overlayColor, data.overlayOpacity) : 'transparent',
-              borderRadius: '20px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              boxSizing: 'border-box'
-            }}>
-              {data.title && <div className="canvas-tag" style={{ position: 'relative', top: 0, left: 0, margin: '0 auto 20px auto', display: 'inline-block' }}>{data.title}</div>}
-              
-              <div 
-                className="canvas-main-text"
-                style={{
-                  position: 'relative', top: 0, left: 0, transform: 'none',
-                  width: '100%',
-                  fontFamily: data.mainFont,
-                  fontSize: `${data.mainSize}px`,
-                  color: data.mainColor,
-                  whiteSpace: 'pre-wrap',
-                  textAlign: 'center',
-                  marginBottom: data.subText ? '20px' : '0'
-                }}
-              >
-                {data.mainText}
-              </div>
-              
-              {data.subText && (
+          <div className="canvas-scale-wrapper">
+            <div 
+              className="canvas-element" 
+              ref={canvasRef}
+              style={{
+                ...template.canvasStyles,
+                backgroundImage: customBg ? `url(${customBg})` : template.canvasStyles.backgroundImage
+              }}
+            >
+              {/* The Overlay Box */}
+              <div style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '80%',
+                padding: '40px',
+                backgroundColor: data.overlayEnabled ? hexToRgba(data.overlayColor, data.overlayOpacity) : 'transparent',
+                borderRadius: '20px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                boxSizing: 'border-box'
+              }}>
+                {data.title && <div className="canvas-tag" style={{ position: 'relative', top: 0, left: 0, margin: '0 auto 20px auto', display: 'inline-block' }}>{data.title}</div>}
+                
                 <div 
-                  className="canvas-sub-text"
+                  className="canvas-main-text"
                   style={{
-                    position: 'relative', bottom: 0, left: 0, transform: 'none',
+                    position: 'relative', top: 0, left: 0, transform: 'none',
                     width: '100%',
-                    fontFamily: data.subFont,
-                    fontSize: `${data.subSize}px`,
-                    color: data.subColor,
+                    fontFamily: data.mainFont,
+                    fontSize: `${data.mainSize}px`,
+                    color: data.mainColor,
                     whiteSpace: 'pre-wrap',
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    marginBottom: data.subText ? '20px' : '0'
                   }}
                 >
-                  {data.subText}
+                  {data.mainText}
                 </div>
-              )}
+                
+                {data.subText && (
+                  <div 
+                    className="canvas-sub-text"
+                    style={{
+                      position: 'relative', bottom: 0, left: 0, transform: 'none',
+                      width: '100%',
+                      fontFamily: data.subFont,
+                      fontSize: `${data.subSize}px`,
+                      color: data.subColor,
+                      whiteSpace: 'pre-wrap',
+                      textAlign: 'center'
+                    }}
+                  >
+                    {data.subText}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
