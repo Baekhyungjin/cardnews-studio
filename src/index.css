@@ -464,20 +464,31 @@ input[type="file"] {
     order: 2; /* Move sidebar below canvas */
   }
   .editor-canvas-container {
-    padding: 20px 0;
+    padding: 20px;
     align-items: center;
     order: 1; /* Move canvas above sidebar */
     min-height: auto;
-    overflow: visible;
+    overflow: hidden; /* Prevent 500px child from breaking layout */
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 
 @media (max-width: 600px) {
   .canvas-scale-wrapper {
-    /* Scale 500px canvas to fit 100vw minus padding (40px) */
-    transform: scale(min(1, calc((100vw - 40px) / 500)));
-    height: calc(500px * min(1, calc((100vw - 40px) / 500)));
+    width: calc(100vw - 40px);
+    height: calc(100vw - 40px);
+    position: relative;
     margin-bottom: 20px;
+    flex-shrink: 0;
+  }
+  .canvas-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(calc((100vw - 40px) / 500));
+    transform-origin: top left;
+    margin-bottom: 0;
   }
 }
 
