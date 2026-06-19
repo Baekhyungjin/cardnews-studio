@@ -331,8 +331,8 @@ export const templates = [
     id: 'CH04', category: '교회/신앙', title: '수요/금요 기도회',
     description: '수요 예배나 금요 철야 기도회 시간을 안내합니다.',
     tags: ['기도회', '예배'], colors: ['#4facfe', '#00f2fe'],
-    previewImage: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800&q=80',
-    canvasStyles: { backgroundImage: 'url(https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' },
+    previewImage: import.meta.env.BASE_URL + 'images/church_prayer_meeting.png',
+    canvasStyles: { backgroundImage: `url(${import.meta.env.BASE_URL}images/church_prayer_meeting.png)`, backgroundSize: 'cover', backgroundPosition: 'center' },
     defaultData: {
       overlayEnabled: true, overlayColor: '#000000', overlayOpacity: 70,
       title: 'FRIDAY PRAYER', mainText: '금요 성령 대망회\n은혜의 밤', subText: '매주 금요일 저녁 8시 | 소예배실',
@@ -357,8 +357,8 @@ export const templates = [
     id: 'CH06', category: '교회/신앙', title: '청년부/주일학교',
     description: '교회 내 소그룹이나 부서 모임을 알릴 때 씁니다.',
     tags: ['청년부', '모임'], colors: ['#fad0c4', '#ffd1ff'],
-    previewImage: 'https://images.unsplash.com/photo-1516223725307-6f76b9ec8742?w=800&q=80',
-    canvasStyles: { backgroundImage: 'url(https://images.unsplash.com/photo-1516223725307-6f76b9ec8742?w=800&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' },
+    previewImage: import.meta.env.BASE_URL + 'images/church_youth_sunday_school.png',
+    canvasStyles: { backgroundImage: `url(${import.meta.env.BASE_URL}images/church_youth_sunday_school.png)`, backgroundSize: 'cover', backgroundPosition: 'center' },
     defaultData: {
       overlayEnabled: true, overlayColor: '#000000', overlayOpacity: 50,
       title: 'YOUTH GROUP', mainText: '청년부 토요 모임\n찬양과 교제', subText: '새로운 청년들을 진심으로 환영합니다!',
@@ -370,8 +370,8 @@ export const templates = [
     id: 'CH07', category: '교회/신앙', title: '새가족 환영',
     description: '교회에 처음 온 새가족을 환영하는 카드뉴스입니다.',
     tags: ['새가족', '환영'], colors: ['#fdfbfb', '#ebedee'],
-    previewImage: 'https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=800&q=80',
-    canvasStyles: { backgroundImage: 'url(https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=800&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' },
+    previewImage: import.meta.env.BASE_URL + 'images/church_newcomer.png',
+    canvasStyles: { backgroundImage: `url(${import.meta.env.BASE_URL}images/church_newcomer.png)`, backgroundSize: 'cover', backgroundPosition: 'center' },
     defaultData: {
       overlayEnabled: true, overlayColor: '#ffffff', overlayOpacity: 70,
       title: 'WELCOME', mainText: '우리 교회에 오신\n여러분을 환영합니다', subText: '주님의 사랑으로 축복합니다',
@@ -383,8 +383,8 @@ export const templates = [
     id: 'CH08', category: '교회/신앙', title: '온라인 헌금/예배',
     description: '비대면 예배 링크나 온라인 헌금 계좌를 깔끔하게 공지합니다.',
     tags: ['헌금', '온라인예배'], colors: ['#cfd9df', '#e2ebf0'],
-    previewImage: 'https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=800&q=80',
-    canvasStyles: { backgroundImage: 'url(https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=800&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' },
+    previewImage: import.meta.env.BASE_URL + 'images/church_online_offering.png',
+    canvasStyles: { backgroundImage: `url(${import.meta.env.BASE_URL}images/church_online_offering.png)`, backgroundSize: 'cover', backgroundPosition: 'center' },
     defaultData: {
       overlayEnabled: true, overlayColor: '#000000', overlayOpacity: 60,
       title: 'OFFERING', mainText: '온라인 헌금 안내', subText: '십일조: 농협 123-4567-8901\n감사헌금: 국민 987-654-321',
