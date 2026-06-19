@@ -46,8 +46,8 @@ export const templates = [
     id: 'E01', category: '학원/교육', title: '수강생 모집',
     description: '새로운 학기나 강의의 수강생을 모집하는 홍보물입니다.',
     tags: ['수강생', '학원', '모집'], colors: ['#84fab0', '#8fd3f4'],
-    previewImage: 'https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?w=800&q=80',
-    canvasStyles: { backgroundImage: 'url(https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?w=800&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' },
+    previewImage: import.meta.env.BASE_URL + 'images/edu_recruit_custom.png',
+    canvasStyles: { backgroundImage: `url(${import.meta.env.BASE_URL}images/edu_recruit_custom.png)`, backgroundSize: 'cover', backgroundPosition: 'center' },
     defaultData: {
       overlayEnabled: true, overlayColor: '#1e3c72', overlayOpacity: 60,
       title: 'RECRUITING', mainText: '2027년 상반기\n코딩 캠프 모집', subText: '선착순 30명 마감! 지금 바로 신청하세요.',
@@ -59,8 +59,8 @@ export const templates = [
     id: 'E02', category: '학원/교육', title: '합격자 발표',
     description: '명예의 전당처럼 합격자를 자랑스럽게 알리는 템플릿입니다.',
     tags: ['합격', '자랑'], colors: ['#fccb90', '#d57eeb'],
-    previewImage: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800&q=80',
-    canvasStyles: { backgroundImage: 'url(https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' },
+    previewImage: import.meta.env.BASE_URL + 'images/edu_pass_custom.png',
+    canvasStyles: { backgroundImage: `url(${import.meta.env.BASE_URL}images/edu_pass_custom.png)`, backgroundSize: 'cover', backgroundPosition: 'center' },
     defaultData: {
       overlayEnabled: true, overlayColor: '#5a3f37', overlayOpacity: 60,
       title: 'CONGRATULATIONS', mainText: '명문대 합격!\n자랑스러운 얼굴들', subText: '노력의 결실을 맺은 것을 진심으로 축하합니다.',
@@ -128,8 +128,8 @@ export const templates = [
     id: 'B01', category: '뷰티/헤어', title: '이달의 아트',
     description: '네일샵이나 미용실에서 추천하는 이번 달 스타일입니다.',
     tags: ['뷰티', '이달의아트'], colors: ['#fdfbfb', '#ebedee'],
-    previewImage: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80',
-    canvasStyles: { backgroundImage: 'url(https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' },
+    previewImage: import.meta.env.BASE_URL + 'images/beauty_art_custom.png',
+    canvasStyles: { backgroundImage: `url(${import.meta.env.BASE_URL}images/beauty_art_custom.png)`, backgroundSize: 'cover', backgroundPosition: 'center' },
     defaultData: {
       overlayEnabled: true, overlayColor: '#ffffff', overlayOpacity: 60,
       title: 'MONTHLY PICK', mainText: '11월 이달의 네일\n69,000원~', subText: '가을 웜톤에 딱 맞는 고급스러운 디자인',
