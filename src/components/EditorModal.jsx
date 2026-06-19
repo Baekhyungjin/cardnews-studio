@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import html2canvas from 'html2canvas';
 import { Download, X, Image as ImageIcon, Wand2, Copy, Check } from 'lucide-react';
 import { generateCopy } from '../data/copywriting';
@@ -36,8 +36,25 @@ function EditorModal({ template, onClose }) {
   const [feedText, setFeedText] = useState('');
   const [hashtags, setHashtags] = useState('');
   const [isCopied, setIsCopied] = useState(false);
+  const [scale, setScale] = useState(1);
   const canvasRef = useRef(null);
   const fileInputRef = useRef(null);
+
+  useEffect(() => {
+    const updateScale = () => {
+      const screenWidth = window.innerWidth;
+      // On mobile screens (< 600px), calculate exact scale factor to fit within 100vw minus 40px padding
+      if (screenWidth < 600) {
+        setScale((screenWidth - 40) / 500);
+      } else {
+        setScale(1);
+      }
+    };
+    
+    updateScale();
+    window.addEventListener('resize', updateScale);
+    return () => window.removeEventListener('resize', updateScale);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -215,13 +232,24 @@ function EditorModal({ template, onClose }) {
         </div>
         
         <div className="editor-canvas-container">
-          <div className="canvas-scale-wrapper">
+          <div className="canvas-scale-wrapper" style={{
+            width: scale < 1 ? 500 * scale : 500,
+            height: scale < 1 ? 500 * scale : 500,
+            position: 'relative',
+            flexShrink: 0
+          }}>
             <div 
               className="canvas-element" 
               ref={canvasRef}
               style={{
                 ...template.canvasStyles,
-                backgroundImage: customBg ? `url(${customBg})` : template.canvasStyles.backgroundImage
+                backgroundImage: customBg ? `url(${customBg})` : template.canvasStyles.backgroundImage,
+                transform: `scale(${scale})`,
+                transformOrigin: 'top left',
+                position: scale < 1 ? 'absolute' : 'relative',
+                top: 0,
+                left: 0,
+                margin: 0
               }}
             >
               {/* The Overlay Box */}

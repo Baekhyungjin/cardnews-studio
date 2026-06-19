@@ -474,23 +474,7 @@ input[type="file"] {
   }
 }
 
-@media (max-width: 600px) {
-  .canvas-scale-wrapper {
-    width: calc(100vw - 40px);
-    height: calc(100vw - 40px);
-    position: relative;
-    margin-bottom: 20px;
-    flex-shrink: 0;
-  }
-  .canvas-element {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: scale(calc((100vw - 40px) / 500));
-    transform-origin: top left;
-    margin-bottom: 0;
-  }
-}
+
 
 @media (max-width: 768px) {
   .header {
