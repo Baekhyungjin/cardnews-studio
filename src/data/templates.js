@@ -292,8 +292,8 @@ export const templates = [
     id: 'CH01', category: '교회/신앙', title: '주일 예배 안내',
     description: '주일 예배 시간과 장소를 단정하고 경건하게 안내합니다.',
     tags: ['주일예배', '교회'], colors: ['#ffffff', '#f4e2d8'],
-    previewImage: '/images/church_sunday_worship.png',
-    canvasStyles: { backgroundImage: 'url(/images/church_sunday_worship.png)', backgroundSize: 'cover', backgroundPosition: 'center' },
+    previewImage: import.meta.env.BASE_URL + 'images/church_sunday_worship.png',
+    canvasStyles: { backgroundImage: `url(${import.meta.env.BASE_URL}images/church_sunday_worship.png)`, backgroundSize: 'cover', backgroundPosition: 'center' },
     defaultData: {
       overlayEnabled: true, overlayColor: '#000000', overlayOpacity: 50,
       title: 'SUNDAY WORSHIP', mainText: '주일 예배 안내', subText: '1부 예배: 오전 9시\n2부 예배: 오전 11시\n본당 대예배실',
