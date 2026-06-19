@@ -442,19 +442,30 @@ input[type="file"] {
 @media (max-width: 1024px) {
   .modal-content {
     flex-direction: column;
-    height: 95vh;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+    border-radius: 0;
+    border: none;
     overflow-y: auto;
+  }
+  .modal-close {
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
   }
   .editor-sidebar {
     width: 100%;
+    padding: 20px 15px;
     border-right: none;
     border-bottom: 1px solid var(--glass-border);
     flex-shrink: 0;
     order: 2; /* Move sidebar below canvas */
   }
   .editor-canvas-container {
-    padding: 20px;
-    align-items: flex-start;
+    padding: 20px 0;
+    align-items: center;
     order: 1; /* Move canvas above sidebar */
     min-height: auto;
     overflow: visible;
@@ -477,11 +488,20 @@ input[type="file"] {
     gap: 15px;
   }
   .filter-tags {
+    display: flex;
     overflow-x: auto;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     width: 100%;
     white-space: nowrap;
     flex-wrap: nowrap;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .filter-tags::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+  .filter-tags .glass-button {
+    flex-shrink: 0;
   }
   .gallery-grid {
     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
